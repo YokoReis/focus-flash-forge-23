@@ -75,20 +75,37 @@ export const Header = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="absolute top-full right-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
+                  onMouseLeave={() => setIsProductsMenuOpen(false)}
                 >
-                  <Link to="/catalogo?type=deck" className="flex items-center gap-3 px-4 py-2 hover:bg-lime-brand-100 transition-colors">
+                  <Link 
+                    to="/catalogo?type=deck" 
+                    className="flex items-center gap-3 px-4 py-2 hover:bg-lime-brand-100 transition-colors"
+                    onClick={() => setIsProductsMenuOpen(false)}
+                  >
                     <BookOpen className="w-4 h-4 text-lime-brand-500" />
                     <span className="text-sm text-gray-700">Flashcards</span>
                   </Link>
-                  <Link to="/catalogo?type=summary" className="flex items-center gap-3 px-4 py-2 hover:bg-orange-brand-100 transition-colors">
+                  <Link 
+                    to="/catalogo?type=summary" 
+                    className="flex items-center gap-3 px-4 py-2 hover:bg-orange-brand-100 transition-colors"
+                    onClick={() => setIsProductsMenuOpen(false)}
+                  >
                     <FileText className="w-4 h-4 text-orange-brand-500" />
                     <span className="text-sm text-gray-700">Resumos</span>
                   </Link>
-                  <Link to="/catalogo?type=mindmap" className="flex items-center gap-3 px-4 py-2 hover:bg-lime-brand-100 transition-colors">
+                  <Link 
+                    to="/catalogo?type=mindmap" 
+                    className="flex items-center gap-3 px-4 py-2 hover:bg-lime-brand-100 transition-colors"
+                    onClick={() => setIsProductsMenuOpen(false)}
+                  >
                     <Layers className="w-4 h-4 text-lime-brand-500" />
                     <span className="text-sm text-gray-700">Mapas Mentais</span>
                   </Link>
-                  <Link to="/catalogo?type=bundle" className="flex items-center gap-3 px-4 py-2 hover:bg-orange-brand-100 transition-colors">
+                  <Link 
+                    to="/catalogo?type=bundle" 
+                    className="flex items-center gap-3 px-4 py-2 hover:bg-orange-brand-100 transition-colors"
+                    onClick={() => setIsProductsMenuOpen(false)}
+                  >
                     <Package className="w-4 h-4 text-orange-brand-500" />
                     <span className="text-sm text-gray-700">Pacotes</span>
                   </Link>
@@ -126,27 +143,59 @@ export const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden border-t border-gray-800 py-4"
           >
-            <div className="space-y-4">
-              {/* Mobile Search */}
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Buscar por área, banca ou órgão..."
-                  className="w-full pl-10 pr-4 py-2 border border-gray-600 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-smooth"
-                />
+              <div className="space-y-4">
+                {/* Mobile Search */}
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Buscar por área, banca ou órgão..."
+                    className="w-full pl-10 pr-4 py-2 border border-gray-600 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-lime-brand-500 focus:border-transparent transition-smooth"
+                  />
+                </div>
+                
+                {/* Mobile Product Links */}
+                <div className="grid grid-cols-2 gap-2">
+                  <Link 
+                    to="/catalogo?type=deck"
+                    className="flex items-center gap-2 p-3 bg-gray-800 rounded-lg hover:bg-lime-brand-100 hover:text-gray-900 transition-colors"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    <span className="text-sm">Flashcards</span>
+                  </Link>
+                  <Link 
+                    to="/catalogo?type=summary"
+                    className="flex items-center gap-2 p-3 bg-gray-800 rounded-lg hover:bg-orange-brand-100 hover:text-gray-900 transition-colors"
+                  >
+                    <FileText className="w-4 h-4" />
+                    <span className="text-sm">Resumos</span>
+                  </Link>
+                  <Link 
+                    to="/catalogo?type=mindmap"
+                    className="flex items-center gap-2 p-3 bg-gray-800 rounded-lg hover:bg-lime-brand-100 hover:text-gray-900 transition-colors"
+                  >
+                    <Layers className="w-4 h-4" />
+                    <span className="text-sm">Mapas</span>
+                  </Link>
+                  <Link 
+                    to="/catalogo?type=bundle"
+                    className="flex items-center gap-2 p-3 bg-gray-800 rounded-lg hover:bg-orange-brand-100 hover:text-gray-900 transition-colors"
+                  >
+                    <Package className="w-4 h-4" />
+                    <span className="text-sm">Pacotes</span>
+                  </Link>
+                </div>
+                
+                {/* Mobile Navigation */}
+                <motion.a
+                  href="/catalogo"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block px-8 py-4 bg-gradient-lime-brand text-slate-950 font-semibold rounded-xl hover:shadow-lg transition-smooth text-lg"
+                >
+                  Ver catálogo completo
+                </motion.a>
               </div>
-              
-              {/* Mobile Navigation */}
-            <motion.a
-              href="/catalogo"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 py-4 bg-white/10 border border-white/20 text-white font-semibold rounded-xl backdrop-blur-sm hover:bg-white/20 transition-smooth text-lg"
-            >
-              Ver catálogo completo
-            </motion.a>
-            </div>
           </motion.div>
         )}
       </div>

@@ -110,7 +110,7 @@ const Admin = () => {
           <div className="flex items-center gap-4">
             <Button
               onClick={() => setShowProductForm(true)}
-              className="bg-gradient-accent text-slate-950 hover:shadow-lg"
+              className="bg-gradient-lime-brand text-slate-950 hover:shadow-lg font-semibold"
             >
               <Plus className="w-4 h-4 mr-2" />
               Novo Produto
@@ -129,43 +129,43 @@ const Admin = () => {
 
         {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <Card>
+          <Card className="border-orange-brand-200 bg-gradient-to-br from-orange-brand-50 to-white">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total de Produtos</CardTitle>
-              <Package className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium text-orange-brand-700">Total de Produtos</CardTitle>
+              <Package className="h-4 w-4 text-orange-brand-500" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{stats.totalProducts}</div>
+              <div className="text-2xl font-bold text-orange-brand-600">{stats.totalProducts}</div>
             </CardContent>
           </Card>
           
-          <Card>
+          <Card className="border-lime-brand-200 bg-gradient-to-br from-lime-brand-50 to-white">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Flashcards</CardTitle>
-              <BookOpen className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium text-lime-brand-700">Flashcards</CardTitle>
+              <BookOpen className="h-4 w-4 text-lime-brand-500" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{stats.productsByType.deck || 0}</div>
+              <div className="text-2xl font-bold text-lime-brand-600">{stats.productsByType.deck || 0}</div>
             </CardContent>
           </Card>
           
-          <Card>
+          <Card className="border-emerald-200 bg-gradient-to-br from-emerald-50 to-white">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Resumos</CardTitle>
-              <FileText className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium text-emerald-700">Resumos</CardTitle>
+              <FileText className="h-4 w-4 text-emerald-500" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{stats.productsByType.summary || 0}</div>
+              <div className="text-2xl font-bold text-emerald-600">{stats.productsByType.summary || 0}</div>
             </CardContent>
           </Card>
           
-          <Card>
+          <Card className="border-orange-brand-200 bg-gradient-to-br from-orange-brand-50 to-white">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Mapas Mentais</CardTitle>
-              <Layers className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium text-orange-brand-700">Mapas Mentais</CardTitle>
+              <Layers className="h-4 w-4 text-orange-brand-500" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{stats.productsByType.mindmap || 0}</div>
+              <div className="text-2xl font-bold text-orange-brand-600">{stats.productsByType.mindmap || 0}</div>
             </CardContent>
           </Card>
         </div>
@@ -206,23 +206,23 @@ const Admin = () => {
         {/* Product Management Tabs */}
         <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as any)} className="space-y-6">
           <TabsList className="grid w-full grid-cols-5 bg-white border border-slate-200">
-            <TabsTrigger value="dashboard" className="data-[state=active]:bg-amber-100">
+            <TabsTrigger value="dashboard" className="data-[state=active]:bg-orange-brand-100 data-[state=active]:text-orange-brand-700">
               <BarChart3 className="w-4 h-4 mr-2" />
               Dashboard
             </TabsTrigger>
-            <TabsTrigger value="deck" className="data-[state=active]:bg-blue-100">
+            <TabsTrigger value="deck" className="data-[state=active]:bg-lime-brand-100 data-[state=active]:text-lime-brand-700">
               <BookOpen className="w-4 h-4 mr-2" />
               Flashcards ({stats.productsByType.deck || 0})
             </TabsTrigger>
-            <TabsTrigger value="summary" className="data-[state=active]:bg-green-100">
+            <TabsTrigger value="summary" className="data-[state=active]:bg-emerald-100 data-[state=active]:text-emerald-700">
               <FileText className="w-4 h-4 mr-2" />
               Resumos ({stats.productsByType.summary || 0})
             </TabsTrigger>
-            <TabsTrigger value="mindmap" className="data-[state=active]:bg-purple-100">
+            <TabsTrigger value="mindmap" className="data-[state=active]:bg-orange-brand-100 data-[state=active]:text-orange-brand-700">
               <Layers className="w-4 h-4 mr-2" />
               Mapas ({stats.productsByType.mindmap || 0})
             </TabsTrigger>
-            <TabsTrigger value="bundle" className="data-[state=active]:bg-amber-100">
+            <TabsTrigger value="bundle" className="data-[state=active]:bg-lime-brand-100 data-[state=active]:text-lime-brand-700">
               <Package className="w-4 h-4 mr-2" />
               Pacotes ({stats.productsByType.bundle || 0})
             </TabsTrigger>
@@ -244,7 +244,8 @@ const Admin = () => {
                           <h4 className="font-medium text-sm">{product.title}</h4>
                           <p className="text-xs text-slate-600">{product.banca} • {product.area}</p>
                         </div>
-                        <Badge variant={product.trending ? "default" : "secondary"}>
+                        <Badge variant={product.trending ? "default" : "secondary"} 
+                               className={product.trending ? "bg-lime-brand-500 text-slate-950" : ""}>
                           {product.trending ? "Em Alta" : "Destaque"}
                         </Badge>
                       </div>
@@ -307,7 +308,7 @@ const Admin = () => {
                         type="checkbox"
                         checked={selectedProducts.includes(product.id)}
                         onChange={() => toggleProductSelection(product.id)}
-                        className="w-4 h-4 text-amber-600 bg-white border-gray-300 rounded focus:ring-amber-500"
+                        className="w-4 h-4 text-lime-brand-600 bg-white border-gray-300 rounded focus:ring-lime-brand-500"
                       />
                     </div>
                     
@@ -349,7 +350,7 @@ const Admin = () => {
                   <Package className="w-12 h-12 mx-auto mb-4 text-slate-300" />
                   <h3 className="text-lg font-medium mb-2">Nenhum produto encontrado</h3>
                   <p className="mb-4">Comece criando seu primeiro {type === "deck" ? "flashcard" : type === "summary" ? "resumo" : type === "mindmap" ? "mapa mental" : "pacote"}.</p>
-                  <Button onClick={() => setShowProductForm(true)}>
+                  <Button onClick={() => setShowProductForm(true)} className="bg-gradient-lime-brand text-slate-950 hover:shadow-lg">
                     <Plus className="w-4 h-4 mr-2" />
                     Criar Produto
                   </Button>
