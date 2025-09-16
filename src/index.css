@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design System - Editorial-Técnico para Concursos */
+/* Todas as cores em HSL. Tipografia Inter + Lexend. Contrastes altos. */
+
+@layer base {
+  :root {
+    /* Cores principais - Editorial técnico */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 5%;
+    
+    /* Surface layers */
+    --card: 210 20% 98%;
+    --card-foreground: 215 25% 8%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 8%;
+    
+    /* Slate base - tons técnicos */
+    --primary: 215 25% 5%;
+    --primary-foreground: 0 0% 98%;
+    
+    --slate-950: 215 25% 5%;
+    --slate-800: 217 19% 27%;
+    --slate-600: 215 14% 34%;
+    --slate-500: 220 9% 46%;
+    --slate-400: 217 9% 61%;
+    --slate-300: 216 12% 84%;
+    --slate-200: 220 13% 91%;
+    --slate-100: 220 14% 96%;
+    
+    /* Accent âmbar - destaque editorial */
+    --amber-500: 45 97% 54%;
+    --amber-600: 43 96% 56%;
+    --amber-400: 48 96% 64%;
+    --amber-300: 48 95% 76%;
+    --amber-200: 48 96% 89%;
+    --amber-100: 48 100% 96%;
+    
+    /* Verde Pix - ação positiva */
+    --emerald-500: 160 84% 39%;
+    --emerald-600: 158 64% 52%;
+    --emerald-400: 161 94% 30%;
+    --emerald-300: 152 76% 36%;
+    --emerald-200: 152 68% 70%;
+    --emerald-100: 152 68% 96%;
+    
+    /* System colors baseados no slate */
+    --secondary: 220 13% 91%;
+    --secondary-foreground: 215 25% 8%;
+    
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 14% 34%;
+    
+    --accent: 45 97% 54%;
+    --accent-foreground: 215 25% 5%;
+    
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 45 97% 54%;
+    
+    /* Gradientes editoriais */
+    --gradient-hero: linear-gradient(135deg, hsl(215 25% 5%), hsl(217 19% 27%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 96%));
+    --gradient-accent: linear-gradient(135deg, hsl(45 97% 54%), hsl(43 96% 56%));
+    --gradient-emerald: linear-gradient(135deg, hsl(160 84% 39%), hsl(158 64% 52%));
+    
+    /* Glass effects */
+    --glass-white: rgba(255, 255, 255, 0.85);
+    --glass-slate: rgba(248, 250, 252, 0.9);
+    
+    /* Shadows técnicos */
+    --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-card-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-xl: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Transitions suaves */
+    --transition-fast: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - manter coerência com o design editorial */
+    --background: 215 25% 5%;
+    --foreground: 220 14% 96%;
+    
+    --card: 217 19% 27%;
+    --card-foreground: 220 14% 96%;
+    
+    --popover: 215 25% 5%;
+    --popover-foreground: 220 14% 96%;
+    
+    --primary: 0 0% 98%;
+    --primary-foreground: 215 25% 5%;
+    
+    --slate-950: 215 25% 5%;
+    --slate-800: 217 19% 27%;
+    --slate-600: 215 14% 34%;
+    --slate-500: 220 9% 46%;
+    --slate-400: 217 9% 61%;
+    --slate-300: 216 12% 84%;
+    --slate-200: 220 13% 91%;
+    --slate-100: 220 14% 96%;
+    
+    /* Accent colors mantêm luminosidade */
+    --amber-500: 45 97% 54%;
+    --amber-600: 43 96% 56%;
+    --emerald-500: 160 84% 39%;
+    --emerald-600: 158 64% 52%;
+    
+    --secondary: 217 19% 27%;
+    --secondary-foreground: 220 14% 96%;
+    
+    --muted: 217 19% 27%;
+    --muted-foreground: 217 9% 61%;
+    
+    --accent: 45 97% 54%;
+    --accent-foreground: 215 25% 5%;
+    
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 220 14% 96%;
+    
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 45 97% 54%;
+    
+    /* Glass effects para dark */
+    --glass-white: rgba(0, 0, 0, 0.4);
+    --glass-slate: rgba(30, 41, 59, 0.8);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+  
+  /* Tipografia Editorial */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-lexend font-semibold tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl lg:text-5xl xl:text-6xl leading-tight;
+  }
+  
+  h2 {
+    @apply text-2xl lg:text-3xl xl:text-4xl leading-tight;
+  }
+  
+  h3 {
+    @apply text-xl lg:text-2xl leading-tight;
+  }
+}
+
+@layer utilities {
+  /* Gradientes do design system */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .bg-gradient-emerald {
+    background: var(--gradient-emerald);
+  }
+  
+  /* Glass effects */
+  .bg-glass-white {
+    background: var(--glass-white);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .bg-glass-slate {
+    background: var(--glass-slate);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  /* Shadows do sistema */
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  
+  .shadow-editorial {
+    box-shadow: var(--shadow-xl);
+  }
+  
+  /* Transitions */
+  .transition-fast {
+    transition: var(--transition-fast);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  /* Hover effects editoriais */
+  .hover-lift {
+    @apply transition-smooth;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-editorial scale-[1.02];
+  }
+  
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+}
