@@ -57,6 +57,25 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Cores da marca
+				'lime-brand': {
+					DEFAULT: 'hsl(var(--lime-brand))',
+					100: 'hsl(var(--lime-brand-100))',
+					200: 'hsl(var(--lime-brand-200))',
+					300: 'hsl(var(--lime-brand-300))',
+					400: 'hsl(var(--lime-brand-400))',
+					500: 'hsl(var(--lime-brand-500))',
+					600: 'hsl(var(--lime-brand-600))',
+				},
+				'orange-brand': {
+					DEFAULT: 'hsl(var(--orange-brand))',
+					100: 'hsl(var(--orange-brand-100))',
+					200: 'hsl(var(--orange-brand-200))',
+					300: 'hsl(var(--orange-brand-300))',
+					400: 'hsl(var(--orange-brand-400))',
+					500: 'hsl(var(--orange-brand-500))',
+					600: 'hsl(var(--orange-brand-600))',
+				},
 				// Cores do design system editorial
 				slate: {
 					950: 'hsl(var(--slate-950))',

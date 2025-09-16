@@ -100,7 +100,7 @@ const Catalogo = () => {
                 placeholder="Buscar por disciplina, área ou palavra-chave..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-smooth"
+                className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-lime-brand-500 focus:border-transparent transition-smooth"
               />
             </div>
             <button
@@ -108,7 +108,7 @@ const Catalogo = () => {
               className={`
                 flex items-center gap-2 px-4 py-3 rounded-lg border transition-smooth font-medium
                 ${showFilters 
-                  ? "bg-amber-50 border-amber-500 text-amber-700" 
+                  ? "bg-lime-brand-100 border-lime-brand-500 text-lime-brand-700" 
                   : "border-slate-200 text-slate-600 hover:bg-slate-50"
                 }
               `}
@@ -116,7 +116,7 @@ const Catalogo = () => {
               <SlidersHorizontal className="w-5 h-5" />
               Filtros
               {getActiveFiltersCount() > 0 && (
-                <span className="bg-amber-500 text-white text-xs px-2 py-1 rounded-full">
+                <span className="bg-lime-brand-500 text-white text-xs px-2 py-1 rounded-full">
                   {getActiveFiltersCount()}
                 </span>
               )}
@@ -142,7 +142,7 @@ const Catalogo = () => {
               )}
               <button
                 onClick={clearAllFilters}
-                className="text-amber-600 hover:text-amber-700 text-sm font-medium ml-2"
+                className="text-orange-brand-600 hover:text-orange-brand-500 text-sm font-medium ml-2"
               >
                 Limpar todos
               </button>
@@ -156,7 +156,7 @@ const Catalogo = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="border border-slate-200 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                className="border border-slate-200 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-lime-brand-500 focus:border-transparent"
               >
                 <option value="relevancia">Relevância</option>
                 <option value="mais-vendidos">Mais Vendidos</option>
@@ -185,7 +185,7 @@ const Catalogo = () => {
                   {getActiveFiltersCount() > 0 && (
                     <button
                       onClick={clearAllFilters}
-                      className="text-amber-600 hover:text-amber-700 text-sm font-medium"
+                      className="text-orange-brand-600 hover:text-orange-brand-500 text-sm font-medium"
                     >
                       Limpar
                     </button>

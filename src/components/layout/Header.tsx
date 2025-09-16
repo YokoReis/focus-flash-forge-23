@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
-import { Search, ShoppingCart, Menu, User } from "lucide-react";
+import { Search, ShoppingCart, Menu, ChevronDown, BookOpen, FileText, Layers, Package } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logoImage from "@/assets/logo.png";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isProductsMenuOpen, setIsProductsMenuOpen] = useState(false);
 
   return (
     <motion.header 
@@ -16,16 +18,18 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center"
-          >
-            <img 
-              src={logoImage} 
-              alt="BASIM Resumos" 
-              className="h-12 w-auto"
-            />
-          </motion.div>
+          <Link to="/">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center cursor-pointer"
+            >
+              <img 
+                src={logoImage} 
+                alt="BASIM Resumos" 
+                className="h-12 w-auto"
+              />
+            </motion.div>
+          </Link>
 
           {/* Search Bar - Desktop */}
           <div className="hidden md:flex flex-1 max-w-lg mx-8">
@@ -53,26 +57,55 @@ export const Header = () => {
               <Search className="w-5 h-5" />
             </button>
 
+            {/* Products Menu */}
+            <div className="hidden sm:block relative">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setIsProductsMenuOpen(!isProductsMenuOpen)}
+                className="flex items-center space-x-2 px-3 py-2 rounded-lg border border-gray-600 hover:bg-gray-800 transition-colors text-white"
+              >
+                <span className="text-sm">Produtos</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${isProductsMenuOpen ? 'rotate-180' : ''}`} />
+              </motion.button>
+
+              {/* Products Dropdown */}
+              {isProductsMenuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="absolute top-full right-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
+                >
+                  <Link to="/catalogo?type=deck" className="flex items-center gap-3 px-4 py-2 hover:bg-lime-brand-100 transition-colors">
+                    <BookOpen className="w-4 h-4 text-lime-brand-500" />
+                    <span className="text-sm text-gray-700">Flashcards</span>
+                  </Link>
+                  <Link to="/catalogo?type=summary" className="flex items-center gap-3 px-4 py-2 hover:bg-orange-brand-100 transition-colors">
+                    <FileText className="w-4 h-4 text-orange-brand-500" />
+                    <span className="text-sm text-gray-700">Resumos</span>
+                  </Link>
+                  <Link to="/catalogo?type=mindmap" className="flex items-center gap-3 px-4 py-2 hover:bg-lime-brand-100 transition-colors">
+                    <Layers className="w-4 h-4 text-lime-brand-500" />
+                    <span className="text-sm text-gray-700">Mapas Mentais</span>
+                  </Link>
+                  <Link to="/catalogo?type=bundle" className="flex items-center gap-3 px-4 py-2 hover:bg-orange-brand-100 transition-colors">
+                    <Package className="w-4 h-4 text-orange-brand-500" />
+                    <span className="text-sm text-gray-700">Pacotes</span>
+                  </Link>
+                </motion.div>
+              )}
+            </div>
+
             {/* Cart */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative p-2 text-white hover:text-gray-300 transition-colors"
+              className="relative p-2 text-white hover:text-lime-brand-500 transition-colors"
             >
               <ShoppingCart className="w-5 h-5" />
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-amber-500 text-white text-xs rounded-full flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-lime-brand-500 text-slate-950 text-xs rounded-full flex items-center justify-center font-semibold">
                 2
               </span>
-            </motion.button>
-
-            {/* User Menu */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="hidden sm:flex items-center space-x-2 px-3 py-2 rounded-lg border border-gray-600 hover:bg-gray-800 transition-colors"
-            >
-              <User className="w-4 h-4 text-white" />
-              <span className="text-sm text-white">Entrar</span>
             </motion.button>
 
             {/* Mobile Menu Button */}

@@ -82,19 +82,19 @@ export const ProductCard = ({ product, variant = "default" }: ProductCardProps) 
     >
       <Link to={`/${product.type}/${product.slug}`} className="block h-full">
         <div className={cardClasses[variant]}>
-          {/* Trending Badge */}
-          {variant === "trending" && product.trending && (
-            <div className="absolute top-3 left-3 bg-gradient-accent text-slate-950 px-3 py-1 rounded-full text-xs font-semibold z-10">
-              🔥 Em Alta
-            </div>
-          )}
+            {/* Trending Badge */}
+            {variant === "trending" && product.trending && (
+              <div className="absolute top-3 left-3 bg-gradient-lime-brand text-slate-950 px-3 py-1 rounded-full text-xs font-semibold z-10">
+                🔥 Em Alta
+              </div>
+            )}
 
-          {/* Featured Badge */}
-          {variant === "featured" && product.featured && (
-            <div className="absolute top-3 right-3 bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-semibold z-10">
-              ⭐ Destaque
-            </div>
-          )}
+            {/* Featured Badge */}
+            {variant === "featured" && product.featured && (
+              <div className="absolute top-3 right-3 bg-gradient-orange-brand text-white px-3 py-1 rounded-full text-xs font-semibold z-10">
+                ⭐ Destaque
+              </div>
+            )}
 
           {/* Product Image */}
           <div className={`relative ${imageClasses} bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden`}>
@@ -191,7 +191,7 @@ export const ProductCard = ({ product, variant = "default" }: ProductCardProps) 
               <div className="flex items-center gap-2">
                 <button
                   onClick={handleAddToCart}
-                  className="p-2 bg-slate-100 hover:bg-amber-500 hover:text-white rounded-lg transition-colors"
+                  className="p-2 bg-slate-100 hover:bg-lime-brand-500 hover:text-slate-950 rounded-lg transition-colors"
                 >
                   <ShoppingCart className="w-4 h-4" />
                 </button>

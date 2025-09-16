@@ -31,7 +31,7 @@ export const FilterPill = ({
         group relative inline-flex items-center gap-2 px-4 py-2 rounded-full 
         bg-glass-white border transition-smooth text-sm font-medium
         ${isActive 
-          ? "border-amber-500 bg-amber-50 text-amber-700 shadow-sm" 
+          ? "border-lime-brand-500 bg-lime-brand-100 text-lime-brand-700 shadow-sm" 
           : "border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50"
         }
         ${isRemovable ? "pr-2" : ""}
@@ -45,7 +45,7 @@ export const FilterPill = ({
         <span className={`
           px-1.5 py-0.5 rounded-full text-xs font-medium
           ${isActive 
-            ? "bg-amber-500 text-white" 
+            ? "bg-lime-brand-500 text-white" 
             : "bg-slate-200 text-slate-600 group-hover:bg-slate-300"
           }
         `}>

@@ -49,6 +49,23 @@
     --emerald-200: 152 68% 70%;
     --emerald-100: 152 68% 96%;
     
+    /* Cores da marca - BFFF00 e F6BB4F */
+    --lime-brand: 73 100% 50%;
+    --lime-brand-100: 73 100% 96%;
+    --lime-brand-200: 73 100% 88%;
+    --lime-brand-300: 73 100% 76%;
+    --lime-brand-400: 73 100% 64%;
+    --lime-brand-500: 73 100% 50%;
+    --lime-brand-600: 73 100% 40%;
+    
+    --orange-brand: 34 90% 63%;
+    --orange-brand-100: 34 90% 96%;
+    --orange-brand-200: 34 90% 88%;
+    --orange-brand-300: 34 90% 76%;
+    --orange-brand-400: 34 90% 68%;
+    --orange-brand-500: 34 90% 63%;
+    --orange-brand-600: 34 90% 55%;
+    
     /* System colors baseados no slate */
     --secondary: 220 13% 91%;
     --secondary-foreground: 215 25% 8%;
@@ -71,6 +88,9 @@
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 96%));
     --gradient-accent: linear-gradient(135deg, hsl(45 97% 54%), hsl(43 96% 56%));
     --gradient-emerald: linear-gradient(135deg, hsl(160 84% 39%), hsl(158 64% 52%));
+    --gradient-lime-brand: linear-gradient(135deg, hsl(73 100% 50%), hsl(73 100% 40%));
+    --gradient-orange-brand: linear-gradient(135deg, hsl(34 90% 63%), hsl(34 90% 55%));
+    --gradient-brand-combo: linear-gradient(135deg, hsl(73 100% 50%), hsl(34 90% 63%));
     
     /* Glass effects */
     --glass-white: rgba(255, 255, 255, 0.85);
@@ -198,6 +218,18 @@
   
   .bg-gradient-emerald {
     background: var(--gradient-emerald);
+  }
+  
+  .bg-gradient-lime-brand {
+    background: var(--gradient-lime-brand);
+  }
+  
+  .bg-gradient-orange-brand {
+    background: var(--gradient-orange-brand);
+  }
+  
+  .bg-gradient-brand-combo {
+    background: var(--gradient-brand-combo);
   }
   
   /* Glass effects */

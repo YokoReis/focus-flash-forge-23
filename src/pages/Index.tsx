@@ -26,7 +26,7 @@ const Index = () => {
       {/* Global trigger for Bundle Suggester - can be called from hero CTA */}
       <button
         onClick={() => setIsBundleSuggesterOpen(true)}
-        className="fixed bottom-6 right-6 bg-gradient-accent text-slate-950 px-6 py-3 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-smooth z-40"
+        className="fixed bottom-6 right-6 bg-gradient-brand-combo text-slate-950 px-6 py-3 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-smooth z-40"
       >
         🎯 Montar Pacote
       </button>

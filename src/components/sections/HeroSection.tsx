@@ -45,7 +45,7 @@ export const HeroSection = ({ onOpenBundleSuggester }: HeroSectionProps) => {
             className="font-lexend font-bold text-5xl lg:text-7xl leading-tight mb-6 text-balance"
           >
             Decks prontos por{" "}
-            <span className="text-transparent bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text">
+            <span className="text-transparent bg-gradient-to-r from-lime-brand-500 to-orange-brand-500 bg-clip-text">
               banca, fase e prazo
             </span>
           </motion.h1>
@@ -78,7 +78,7 @@ export const HeroSection = ({ onOpenBundleSuggester }: HeroSectionProps) => {
                 className="
                   w-full pl-12 pr-4 py-4 bg-white/95 backdrop-blur-sm border-0 rounded-xl 
                   text-slate-900 placeholder-slate-500 text-lg
-                  focus:ring-2 focus:ring-amber-500 focus:outline-none
+                  focus:ring-2 focus:ring-lime-brand-500 focus:outline-none
                   shadow-2xl transition-smooth
                 "
               />
@@ -96,7 +96,7 @@ export const HeroSection = ({ onOpenBundleSuggester }: HeroSectionProps) => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={onOpenBundleSuggester}
-              className="px-8 py-4 bg-gradient-accent text-slate-950 font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-smooth text-lg"
+              className="px-8 py-4 bg-gradient-lime-brand text-slate-950 font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-smooth text-lg"
             >
               🎯 Montar meu pacote agora
             </motion.button>
